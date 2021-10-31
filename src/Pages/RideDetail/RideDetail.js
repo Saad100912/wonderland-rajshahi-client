@@ -18,7 +18,7 @@ const RideDetail = () => {
     } = useForm();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/rides/${rideId}`, {
+        fetch(`https://infinite-eyrie-65036.herokuapp.com/rides/${rideId}`, {
             method: "GET",
         })
             .then((res) => res.json())
@@ -35,7 +35,7 @@ const RideDetail = () => {
         };
         // console.log(data);
 
-        fetch("http://localhost:5000/bookings", {
+        fetch("https://infinite-eyrie-65036.herokuapp.com/bookings", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

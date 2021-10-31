@@ -6,7 +6,7 @@ import Ride from "./Ride";
 const Rides = () => {
     const [rides, setRides] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/rides")
+        fetch("https://infinite-eyrie-65036.herokuapp.com/rides")
             .then((res) => res.json())
             .then((data) => {
                 setRides(data);
