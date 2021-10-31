@@ -15,7 +15,7 @@ const Feature = () => {
                         alt=""
                     />
                     <h3 className="text-warning py-3">
-                        The most tallest ferris wheel in the country
+                        The tallest ferris wheel in the country
                     </h3>
                     <p>
                         We've got the tallest ferris wheel in the country. The
@@ -33,7 +33,7 @@ const Feature = () => {
                         alt=""
                     />
                     <h3 className="text-warning py-3">
-                        State of the art lighting for the drop tower
+                        Drop tower State of the art lighting
                     </h3>
                     <p>
                         Our drop tower features the top quality state of the art

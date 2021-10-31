@@ -4,11 +4,12 @@ import Home from "./Pages/Home/Home/Home";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Header from "./Pages/Shared/Header/Header";
 import Login from "./Pages/Login/Login";
-import Register from "./Pages/Register/Register";
 import RideDetail from "./Pages/RideDetail/RideDetail";
 import MyBookings from "./Pages/MyBookings/MyBookings";
 import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 import AuthProvider from "./context/AuthProvider";
+import AllBookings from "./Pages/AllBookings/AllBookings";
+import AddNewRide from "./Pages/addNewRide/AddNewRide";
 
 function App() {
     return (
@@ -25,14 +26,17 @@ function App() {
                     <Route path="/login">
                         <Login />
                     </Route>
-                    <Route path="/register">
-                        <Register />
-                    </Route>
                     <PrivateRoute exact path="/rideDetail/:rideId">
                         <RideDetail />
                     </PrivateRoute>
                     <PrivateRoute path="/manageMyBookings">
                         <MyBookings />
+                    </PrivateRoute>
+                    <PrivateRoute path="/manageAllBookings">
+                        <AllBookings />
+                    </PrivateRoute>
+                    <PrivateRoute path="/addNewRide">
+                        <AddNewRide />
                     </PrivateRoute>
                 </Switch>
                 <Footer />

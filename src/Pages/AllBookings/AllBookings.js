@@ -1,21 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import useAuth from "./../../hooks/useAuth";
-import "./MyBookings.css";
+import "./AllBookings.css";
 
-const MyBookings = () => {
-    const [myBookings, setMyBookings] = useState([]);
-    const { user } = useAuth();
+const AllBookings = () => {
+    const [allBookings, setAllBookings] = useState([]);
+    // console.log(allBookings);
 
     useEffect(() => {
-        fetch(
-            `https://infinite-eyrie-65036.herokuapp.com/bookings/${user.email}`
-        )
+        fetch("http://localhost:5000/bookings")
             .then((res) => res.json())
-            .then((data) => {
-                setMyBookings(data);
-            });
-    }, [user.email]);
+            .then((data) => setAllBookings(data));
+    }, []);
 
     const handleCancelBtn = (id) => {
         const proceed = window.confirm(
@@ -30,44 +25,67 @@ const MyBookings = () => {
                     if (data.deletedCount) {
                         alert("Canceled the booking successfully");
                     }
-                    const rest = myBookings.filter((s) => s._id !== id);
-                    console.log(rest);
-                    setMyBookings(rest);
+                    const rest = allBookings.filter((s) => s._id !== id);
+                    // console.log(rest);
+                    setAllBookings(rest);
                 });
         }
     };
 
+    const handleApproveBtn = (id) => {
+        const url = `http://localhost:5000/bookings/${id}`;
+        fetch(url, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({
+                status: "approved",
+            }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.modifiedCount > 0) {
+                    alert("This booking has been approved successfully");
+                    fetch("http://localhost:5000/bookings")
+                        .then((res) => res.json())
+                        .then((data) => {
+                            setAllBookings(data);
+                        });
+                }
+            });
+    };
+
     return (
-        <div className="container my-5 my-booking-page">
-            <h1>My bookings</h1>
+        <div className="container my-5 all-bookings-page">
+            <h1>Manage all bookings</h1>
             <div>
                 <table className="booking-table">
                     <thead>
                         <tr>
-                            <th>Ride Image</th>
                             <th>Ride Name</th>
-                            <th>Cost</th>
                             <th>Booked by</th>
                             <th>Phone</th>
                             <th>Status</th>
+                            <th>Approve</th>
                             <th>Cancel</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {myBookings.map((s) => (
+                        {allBookings.map((s) => (
                             <tr key={s._id}>
-                                <td data-title="Ride Image">
-                                    <img
-                                        className="img-fluid"
-                                        src={s.rideImg}
-                                        alt=""
-                                    />
-                                </td>
                                 <td data-title="Ride Name">{s.rideName}</td>
-                                <td data-title="Cost">{s.rideCost}</td>
                                 <td data-title="Booked by">{s.name}</td>
                                 <td data-title="Phone">{s.phone}</td>
                                 <td data-title="Status">{s.status}</td>
+                                <td data-title="Approve">
+                                    <button
+                                        className="approve-bookings-btn"
+                                        onClick={() => handleApproveBtn(s._id)}
+                                    >
+                                        Approve
+                                    </button>
+                                </td>
                                 <td data-title="Cancel">
                                     <button
                                         className="cancel-bookings-btn"
@@ -85,4 +103,4 @@ const MyBookings = () => {
     );
 };
 
-export default MyBookings;
+export default AllBookings;

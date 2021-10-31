@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./RideDetail.css";
 import useAuth from "./../../hooks/useAuth";
@@ -10,6 +10,7 @@ const RideDetail = () => {
     const [ride, setRide] = useState({});
     const { user } = useAuth();
     const { img, name, description } = ride;
+
     const {
         register,
         handleSubmit,
