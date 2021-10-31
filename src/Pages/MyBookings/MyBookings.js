@@ -31,7 +31,7 @@ const MyBookings = () => {
                         alert("Canceled the booking successfully");
                     }
                     const rest = myBookings.filter((s) => s._id !== id);
-                    console.log(rest);
+                    // console.log(rest);
                     setMyBookings(rest);
                 });
         }
