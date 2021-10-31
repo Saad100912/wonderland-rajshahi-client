@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Wonderland Rajshahi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Live site - <https://wonderland-rajshahi.web.app/>
 
-## Available Scripts
+## Theme park related website
 
-In the project directory, you can run:
+-   This is website that represents a theme park named Wonderland Rajshahi
+-   A user can view the different services or rides this park has and make an booking.
+-   This website also have a banner. A top feature and packages section in the Home page.
 
-### `npm start`
+## Login
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-   A user can make an account or login using google account.
+-   Once the user logs in he'll see his profile picture on the header.
+-   If her clicks on the profile picture then a offcanvas will open from the right side.
+-   In this offcanvas he will find Logout button with other user and admin controls.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Ride detail
 
-### `npm test`
+-   If the user clicks on the book now button of a ride then will be directed to details page.
+-   From the details page user can view more information and can place a booking.
+-   The system automatically takes username and email from the login system.
+-   The user have to give address and phone number to place the booking.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User controls
 
-### `npm run build`
+-   Once the users logs it, more options will appear.
+-   They can view the bookings they made.
+-   They can cancel a booking if they want to.
+-   Also view the booking order stage.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Admin controls
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   A admin can view all the orders placed by all the users.
+-   Admin can delete any booking request.
+-   Admin can update the booking state from "pending" to "approved".
+-   Admin can also add a new ride information. For this, he'll have to give the necessary information then submit it.
+-   After submitting it, the home page will automatically updated with this new ride.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Protected Route
 
-### `npm run eject`
+-   The Routes are protected. So, if the user is logged in then he can visit those routes.
+-   If a logged out user tries to visit private route then he'll automatically be redirected to login page.
+-   In the login page once the user logs in he'll automatically redirected to the page he was trying to go.
+-   If a user reloads or refresh the page when he is in a private route then it does not redirects him to login page.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Responsive design
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   The website is designed using CSS framework Bootstrap.
+-   Website has different views for mobile and tablet.
+-   Used "No more table" system to make responsive table design for mobile devices.
+-   Adjusted font sizes where necessary to increase readability.
+-   All the images used in the website are hosted in imgbb.com website.

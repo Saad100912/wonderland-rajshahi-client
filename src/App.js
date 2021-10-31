@@ -23,19 +23,19 @@ function App() {
                     <Route exact path="/home">
                         <Home />
                     </Route>
-                    <Route path="/login">
+                    <Route exact path="/login">
                         <Login />
                     </Route>
                     <PrivateRoute exact path="/rideDetail/:rideId">
                         <RideDetail />
                     </PrivateRoute>
-                    <PrivateRoute path="/manageMyBookings">
+                    <PrivateRoute exact path="/manageMyBookings">
                         <MyBookings />
                     </PrivateRoute>
-                    <PrivateRoute path="/manageAllBookings">
+                    <PrivateRoute exact path="/manageAllBookings">
                         <AllBookings />
                     </PrivateRoute>
-                    <PrivateRoute path="/addNewRide">
+                    <PrivateRoute exact path="/addNewRide">
                         <AddNewRide />
                     </PrivateRoute>
                 </Switch>
