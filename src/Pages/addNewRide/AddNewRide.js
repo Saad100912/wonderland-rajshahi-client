@@ -5,7 +5,7 @@ const AddNewRide = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data) => {
-        fetch("http://localhost:5000/rides", {
+        fetch("https://infinite-eyrie-65036.herokuapp.com/rides", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

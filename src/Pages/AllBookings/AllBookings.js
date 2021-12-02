@@ -7,7 +7,7 @@ const AllBookings = () => {
     // console.log(allBookings);
 
     useEffect(() => {
-        fetch("http://localhost:5000/bookings")
+        fetch("https://infinite-eyrie-65036.herokuapp.com/bookings")
             .then((res) => res.json())
             .then((data) => setAllBookings(data));
     }, []);
@@ -33,7 +33,7 @@ const AllBookings = () => {
     };
 
     const handleApproveBtn = (id) => {
-        const url = `http://localhost:5000/bookings/${id}`;
+        const url = `https://infinite-eyrie-65036.herokuapp.com/bookings/${id}`;
         fetch(url, {
             method: "PUT",
             headers: {
@@ -47,7 +47,7 @@ const AllBookings = () => {
             .then((data) => {
                 if (data.modifiedCount > 0) {
                     alert("This booking has been approved successfully");
-                    fetch("http://localhost:5000/bookings")
+                    fetch("https://infinite-eyrie-65036.herokuapp.com/bookings")
                         .then((res) => res.json())
                         .then((data) => {
                             setAllBookings(data);
